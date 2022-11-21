@@ -9,5 +9,5 @@
 
 ## 🚀 Quick start
 
-    - [Tutorial](https://www.gatsbyjs.com/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
+[Tutorial](https://www.gatsbyjs.com/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
     
