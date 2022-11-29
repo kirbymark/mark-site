@@ -3,7 +3,6 @@
     <img alt="Mark's Icon" src="./src/images/kirbymark-mg.svg" width="100" />
   </a>
 </p>
-<hr>
 <table align="center">
 <thead>
   <tr>
@@ -27,4 +26,5 @@
 
 
 ## Deployment is currently at
-[Mark-site on Gatsby cloud]((https://marksitemaster.gatsbyjs.io/)
+
+[Mark-site on Gatsby cloud](https://marksitemaster.gatsbyjs.io/)
