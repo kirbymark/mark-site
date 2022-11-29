@@ -5,7 +5,7 @@
 }
 
 .heading {
-    color: rebeccapurple;
+    color: rgb(22, 104, 228);
   }
 
 .nav-links {
@@ -19,5 +19,5 @@ padding-right: 2rem;
 }
 
 .nav-link-text {
-color: black;
+color: rgb(5, 22, 168);
 }
