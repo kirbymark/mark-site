@@ -15,6 +15,7 @@ const BlogPage = ( {data, children} ) => {
           <h2>{node.frontmatter.title}</h2>
           <p>Posted: {node.frontmatter.date}</p>
           <p>{node.excerpt}</p>
+          <p>Modified: {node.parent.modifiedTime}</p>
         </article>
       ))}
       </ul>
@@ -26,15 +27,20 @@ const BlogPage = ( {data, children} ) => {
 
 export const query = graphql`
   query {
-    allMdx(sort: { frontmatter: { date: DESC }}) {
+    allMdx(sort: {frontmatter: {date: DESC}}) {
       nodes {
         frontmatter {
           date(formatString: "MMMM D, YYYY")
           title
-          slug
         }
         id
         excerpt
+        parent {
+          ... on File {
+            name
+            modifiedTime(formatString: "MMMM D, YYYY")
+          }
+        }
       }
     }
   }
