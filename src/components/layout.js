@@ -3,23 +3,30 @@ import { Link, useStaticQuery, graphql } from "gatsby"
 import { container, heading, navLinks, navLinkItem, navLinkText, siteTitle, } from './layout.module.css'
 
 const Layout = ({ pageTitle, pageHeading, children }) => {
-    const data = useStaticQuery(graphql`
-        query {
-            site {
-                siteMetadata {
-                    title
-                }
-            }
+    
+    const query = graphql`
+    query {
+        site {
+        siteMetadata {
+            title, 
+            siteUrl,
+            description
         }
-    `)
+        }
+    }
+    `
 
-    console.log("data: ", data)
+    const configdata = useStaticQuery(query)
+
+    console.log("configdata: ", configdata)
+    console.log("Site Title: ", configdata.site.siteMetadata.title)
+    console.log("Site Description: ", configdata.site.siteMetadata.description)
+    console.log("Site location: ", configdata.site.siteMetadata.siteUrl)
 
     return (
         <main>
-            <title>{pageTitle}</title>
             <div className={container}>
-            <header className={siteTitle}>{data.site.siteMetadata.title}</header>
+            <header className={siteTitle}>{configdata.site.siteMetadata.title}</header>
                 <nav>
                     <ul className={navLinks}>
                         <li className={navLinkItem}><Link to="/" className={navLinkText}>Home</Link></li>
